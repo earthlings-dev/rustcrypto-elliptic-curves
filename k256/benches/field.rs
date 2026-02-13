@@ -45,7 +45,7 @@ fn bench_field_element_normalize<'a, M: Measurement>(group: &mut BenchmarkGroup<
 fn bench_field_element_mul<'a, M: Measurement>(group: &mut BenchmarkGroup<'a, M>) {
     let x = test_field_element_x();
     let y = test_field_element_y();
-    group.bench_function("mul", |b| b.iter(|| &black_box(x) * &black_box(y)));
+    group.bench_function("mul", |b| b.iter(|| black_box(x) * black_box(y)));
 }
 
 fn bench_field_element_square<'a, M: Measurement>(group: &mut BenchmarkGroup<'a, M>) {

@@ -14,33 +14,33 @@ repository = "https://github.com/RustCrypto/elliptic-curves"
 readme = "README.md"
 categories = ["cryptography", "no-std"]
 keywords = ["crypto", "ecc", "stb", "bign-curve256v1", "bignp256"]
-edition = "2024"
-rust-version = "1.85"
+edition.workspace = true
+rust-version.workspace = true
 
 [dependencies]
-elliptic-curve = { version = "0.14.0-rc.28", features = ["sec1"] }
+elliptic-curve = { workspace = true, default-features = true }
 
 # optional dependencies
-belt-hash = { version = "0.2.0-rc.5", optional = true, default-features = false }
-der = { version = "0.8.0-rc.10" }
-digest = { version = "0.11.0-rc.11", optional = true }
-hex-literal = { version = "1", optional = true }
-hkdf = { version = "0.13.0-rc.5", optional = true }
-hmac = { version = "0.13.0-rc.5", optional = true }
-rand_core = "0.10"
-rfc6979 = { version = "0.5.0-rc.5", optional = true }
-pkcs8 = { version = "0.11.0-rc.10", optional = true }
-primefield = { version = "0.14.0-rc.7", optional = true }
-primeorder = { version = "0.14.0-rc.7", optional = true }
-sec1 = { version = "0.8.0-rc.13", optional = true }
-signature = { version = "3.0.0-rc.10", optional = true }
+belt-hash = { workspace = true, optional = true }
+der = { workspace = true }
+digest = { workspace = true, optional = true }
+hex-literal = { workspace = true, optional = true }
+hkdf = { workspace = true, optional = true }
+hmac = { workspace = true, optional = true }
+rand_core = { workspace = true, default-features = true }
+rfc6979 = { workspace = true, optional = true }
+pkcs8 = { workspace = true, optional = true }
+primefield = { workspace = true, optional = true }
+primeorder = { workspace = true, optional = true }
+sec1 = { workspace = true, optional = true }
+signature = { workspace = true, optional = true, default-features = true }
 
 [dev-dependencies]
-criterion = "0.7"
-elliptic-curve = { version = "0.14.0-rc.28", default-features = false, features = ["dev"] }
-hex-literal = "1"
-primeorder = { version = "0.14.0-rc.7", features = ["dev"] }
-proptest = "1"
+criterion = { workspace = true }
+elliptic-curve = { workspace = true, features = ["dev"] }
+hex-literal = { workspace = true }
+primeorder = { workspace = true, features = ["dev"] }
+proptest = { workspace = true }
 
 [features]
 default = ["ecdh", "ecdsa", "pem", "std"]

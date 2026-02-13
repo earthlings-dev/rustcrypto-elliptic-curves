@@ -1078,7 +1078,7 @@ mod tests {
     fn try_generate_from_rng() {
         let a = Scalar::try_generate_from_rng(&mut SysRng).unwrap();
         // just to make sure `a` is not optimized out by the compiler
-        assert_eq!((a - &a).is_zero().unwrap_u8(), 1);
+        assert_eq!((a - a).is_zero().unwrap_u8(), 1);
     }
 
     #[test]

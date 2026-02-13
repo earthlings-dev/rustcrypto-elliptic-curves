@@ -10,14 +10,14 @@ repository = "https://github.com/RustCrypto/elliptic-curves"
 readme = "README.md"
 categories = ["cryptography", "no-std"]
 keywords = ["hash2curve", "crypto", "ecc"]
-edition = "2024"
-rust-version = "1.85"
+edition.workspace = true
+rust-version.workspace = true
 
 [dependencies]
-digest = { version = "0.11.0-rc.11" }
-elliptic-curve = { version = "0.14.0-rc.28", default-features = false, features = ["arithmetic"] }
+digest = { workspace = true }
+elliptic-curve = { workspace = true, features = ["arithmetic"] }
 
 [dev-dependencies]
-hex-literal = "1"
-sha2 = { version = "0.11.0-rc.5", default-features = false }
-sha3 = { version = "0.11.0-rc.7", default-features = false }
+hex-literal = { workspace = true }
+sha2 = { workspace = true }
+sha3 = { workspace = true }

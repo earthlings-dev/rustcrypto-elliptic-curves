@@ -716,7 +716,7 @@ mod tests {
         let k: FieldElement = FieldElement::generate();
         let l: FieldElement = FieldElement::generate();
 
-        let expected = vec![k.invert().unwrap(), l.invert().unwrap()];
+        let expected = [k.invert().unwrap(), l.invert().unwrap()];
         let field_elements = vec![k, l]; // to test impl of `BatchInvert` for `Vec`
         let actual = <FieldElement as BatchInvert<_>>::batch_invert(field_elements).unwrap();
 
